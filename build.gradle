@@ -1,14 +1,32 @@
 buildscript {
     repositories {
+        mavenLocal()
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+repositories {
+    maven {
+        name 'Mobius repo'
+        url "http://mobiusstrip.eu/maven"
+    }
+    maven {
+        name = "JEI repo"
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+}
 
 version = mod_version + "-" + mod_channel
 group = mod_group
@@ -21,6 +39,7 @@ compileJava {
 
 minecraft {
     version = minecraft_version + "-" + forge_version
+    runDir = "run"
 
     replaceIn "package-info.java"
 
@@ -30,17 +49,6 @@ minecraft {
 
     // used when launching minecraft in dev env
     mappings = mcp_mappings
-}
-
-repositories {
-    maven {
-        name 'Mobius Repo'
-        url "http://mobiusstrip.eu/maven"
-    }
-    maven {
-        name = "JEI repo"
-        url "http://dvs1.progwml6.com/files/maven"
-    }
 }
 
 dependencies {
@@ -54,7 +62,10 @@ dependencies {
     // at runtime, use the full JEI jar
     runtime "mezz.jei:jei_${minecraft_version}:${jei_version}"
 
-    deobfCompile "appeng:appliedenergistics2:${ae_verion}"
+    //deobfCompile "appeng:appliedenergistics2:${ae_verion}"
+
+    // unit test dependencies
+    testCompile "junit:junit:4.12"
 }
 
 processResources {
