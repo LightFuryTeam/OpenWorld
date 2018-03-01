@@ -13,15 +13,19 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
-
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+
     maven {
-        name 'Mobius repo'
+        name "Mobius"
         url "http://mobiusstrip.eu/maven"
     }
+
     maven {
         name = "JEI repo"
         url "http://dvs1.progwml6.com/files/maven"
@@ -51,12 +55,15 @@ minecraft {
     mappings = mcp_mappings
 }
 
+configurations {
+    mods
+}
+
 dependencies {
     // installable runtime dependencies
-    compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}"
+    mods "mcp.mobius.waila:Hwyla:${hwyla_version}"
 
     // compile against provided APIs
-    compileOnly "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
     compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}"
 
     // at runtime, use the full JEI jar
