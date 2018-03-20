@@ -64,15 +64,11 @@ dependencies {
     mods "mcp.mobius.waila:Hwyla:${hwyla_version}"
 
     // compile against provided APIs
+    compileOnly "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
     //compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}"
 
-    // at runtime, use the full JEI jar
-    runtime "mezz.jei:jei_${minecraft_version}:${jei_version}"
-
-    runtime "appeng:appliedenergistics2:${ae_version}"
-    compile ("appeng:appliedenergistics2:${ae_version}:api") {
-        transitive = false
-    }
+    compile "appeng:appliedenergistics2:${ae_version}"
+    //compile "appeng:appliedenergistics2:${ae_version}:api"
 
     // unit test dependencies
     testCompile "junit:junit:4.12"
