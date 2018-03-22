@@ -1,7 +1,7 @@
 [
 {
-  "modid": "mc-open-world",
-  "name": "MC-Open-World",
+  "modid": "examplemod",
+  "name": "Example Mod",
   "description": "Example placeholder mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
