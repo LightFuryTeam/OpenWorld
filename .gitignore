@@ -12,11 +12,18 @@ out
 *.iws
 *.iml
 .idea
+classes
 
 # gradle
 build
 .gradle
 
+# Package Files #
+*.jar
+*.war
+*.ear
+
 # other
 eclipse
 run
+*.class
