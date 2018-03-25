@@ -28,11 +28,8 @@ public class MCOpenWorldMod
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        logger.debug("Registering blocks");
         MinecraftForge.EVENT_BUS.register(NetworkSmelter.class);
         MinecraftForge.EVENT_BUS.register(NetworkPulverizer.class);
-
-
     }
 }
