@@ -1,6 +1,6 @@
-package be.ghosidevteam.mcopenworld.blocks;
+package be.lightfury.openworld.blocks;
 
-import be.ghosidevteam.mcopenworld.config.CreativeTab;
+import be.lightfury.openworld.config.CreativeTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 

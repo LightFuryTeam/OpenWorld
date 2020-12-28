@@ -1,15 +1,16 @@
-package be.ghosidevteam.mcopenworld.config;
+package be.lightfury.openworld.config;
 
-import be.ghosidevteam.mcopenworld.MCOpenWorldMod;
+import be.lightfury.openworld.OpenWorld;
+import net.minecraft.client.gui.screen.inventory.CreativeScreen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public final class CreativeTab extends CreativeTabs {
+public final class CreativeTab extends Creative {
     private static CreativeTab instance = null;
 
     protected CreativeTab() {
-        super(MCOpenWorldMod.NAME);
+        super(OpenWorld.NAME);
     }
 
     public static CreativeTab getInstance()

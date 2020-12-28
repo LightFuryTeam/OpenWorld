@@ -1,4 +1,4 @@
-package be.ghosidevteam.mcopenworld.blocks;
+package be.lightfury.openworld.blocks;
 
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
